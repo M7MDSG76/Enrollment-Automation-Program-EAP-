@@ -1,0 +1,14 @@
+E-Learining program steps:-
+	1-Import the librarys.
+	2-Set the excel filse path.
+	3-Load the sheet in DataFrame and skip the unnesseccery rows.
+	4-Make list of the required Columns name.
+	5-Make new DF only containes the required columns.
+	6-Convert the pivot Column ("Activity",or "Name") to list (help to filter DF).
+	7-from the list in step #6 exctract courses names.
+	8-set date for filtering use.
+	9-filter date column.
+	10-Convert the "External ID" to Integer.
+	11-Create new DF for each course and save it into list of DFs called "FinalTable".
+	12-DF for each course.
+	13-Write the DFs on the new workbook.

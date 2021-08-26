@@ -71,16 +71,19 @@ def pandasCopySheet(source, sheetIndex):
     with pd.ExcelWriter(destination2) as writer:
         dataFrame.to_excel(writer, index=False)
 
+
+
+
+
 def pandasFilterTable(dataFrame):
     d = pd.DataFrame(dataFrame)
-    print(d.head(5))
-    print('this is Data Frame: \n')
-    # print(d.years!=2002)
-    is_301538 = d['Process Safety Management'] == '2021-1-3'
-    print('valide date is: ', is_301538.shape)
-    print(is_301538.head())
-    # filteredTable = d.filter(items=['Process Safety Management'])
-    # print(filteredTable)
+    print('dataFrame:\n', d.head(5))
+    print('dataFrame fun: \n', d.info())
+    x = [0,1,2]
+    print(d.lookup(0, d['Hydrogen Sulfide Awareness']))
+
+
+
 
 wb = openpyxl.load_workbook(source)
 ws = wb.active
@@ -89,8 +92,6 @@ dataFrame = xl.parse(0)
 
 pandasFilterTable(dataFrame)
 # pandasCopySheet(source, 0)
-
-
 
 
 # df = pd.DataFrame(np.array(([1, 2, 3], [4, 5, 6])),
