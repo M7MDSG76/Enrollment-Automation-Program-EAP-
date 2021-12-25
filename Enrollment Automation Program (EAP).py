@@ -80,21 +80,13 @@ def exctracting_courses_names(list):    # 2
 
 coursesList = exctracting_courses_names(activity_list)
 
+
+
+
 # step 8
-# set the dates
-
-
 # timestring library is a great library that converts any string to date type object.
-# filter the table by date ((NOT USED))
-# def convert_str_to_date(dataFrame):
-#     for i in range(len(dataFrame)):
-#         timestring.Date(dataFrame['Completed'][i])  # convert the date from string type to date type
-#
-#
-# convert_str_to_date(required_dataframe)
-
-# step 8
 # set the dates
+# Date in : yyyy-mm-dd
 startDate = timestring.Date(input('Enter start Date: '))
 endDate = timestring.Date(input('Enter End Date: '))
 
@@ -118,8 +110,9 @@ for i in range(len(coursesList)):
     finalTable[i] = required_dataframe[required_dataframe.Name.isin(CourseName)]  # isin() function only accept list.
     finalTable[i] = finalTable[i].reset_index(drop=True)
 
-# step 12
 
+
+# step 12
 # TEST IT !!!!
 # I want to make dataframe for each course
 
@@ -141,8 +134,7 @@ writer = pd.ExcelWriter(new_workbook, engine='openpyxl')
 for i in range(len(finalTable)):
     print(i)
     print(df_list[i], ' - ', coursesList[i])
-    df_list[i].to_excel(writer, sheet_name=coursesList[i][
-                                           :10])  # write DF on sheet named with the first 10 charachters of Activity name
+    df_list[i].to_excel(writer, sheet_name=coursesList[i][:10])  # write DF on sheet named with the first 10 charachters of Activity name
 
 # Save the workbook on the excel file.
 writer.save()

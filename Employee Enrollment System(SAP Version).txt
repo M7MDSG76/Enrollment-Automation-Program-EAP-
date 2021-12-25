@@ -25,7 +25,8 @@ work flow:
 new system planned work flow:
 1- Run the system.
 2- Check: number of rows in the data file = maxRowNumber.
-3- Enter the input(username, password, dataPath, maxRowNumber). the username and password for the LSO-SAP system.
+3- Enter the input(filePath, filterStartDate, filterEndDate).
+4- Username and Password for LSO-SAP account.
 
 
 
